@@ -26,11 +26,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class PhotoFragment extends Fragment {
-    // tag for logcat
     public static final String TAG = PhotoFragment.class.getSimpleName();
 
     private ProgressBar mProgressBar;
@@ -70,7 +67,6 @@ public class PhotoFragment extends Fragment {
         mPhoto = (ImageView) view.findViewById(R.id.photo);
         Glide.with(this).load(mItem.getUrl()).thumbnail(0.5f).into(mPhoto);
 
-        // download original single photo
         LinearLayout downloadView = (LinearLayout) view.findViewById(R.id.download);
         downloadView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +76,6 @@ public class PhotoFragment extends Fragment {
             }
         });
 
-        // open url link for Flickr official app
         LinearLayout openView = (LinearLayout) view.findViewById(R.id.open);
         openView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,12 +84,10 @@ public class PhotoFragment extends Fragment {
             }
         });
 
-        // load original photo
         startLoading();
         return view;
     }
 
-    // function for downloading original photo when download button is pressed
     private void downloadPhoto() {
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(mItem.getUrl()));
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
@@ -103,14 +96,12 @@ public class PhotoFragment extends Fragment {
         mDownloadManager.enqueue(request);
     }
 
-    // function for opening Flickr official app when open button is pressed
     private void openApp () {
         String url = UrlManager.getInstance().getFlickrUrl(mItem.getId());
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
     }
 
-    // function for loading single photo description by Volley
     private void startLoading() {
         mLoading = true;
         mProgressBar.setVisibility(View.VISIBLE);
@@ -145,7 +136,6 @@ public class PhotoFragment extends Fragment {
         mRq.add(request);
     }
 
-    // cancel downloading request when fragment is stopped
     private void stopLoading() {
         if (mRq != null) {
             mRq.cancelAll(TAG);

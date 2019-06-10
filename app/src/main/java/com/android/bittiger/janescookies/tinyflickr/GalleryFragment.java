@@ -226,7 +226,6 @@ public class GalleryFragment extends Fragment {
         if (mSearchView != null) {
             Log.d("onCreateOptionsMenu", "---testsearchview---- mSearchView is not null  -----------");
 
-            // search suggestion
             mSearchView.setOnSuggestionListener(new SearchView.OnSuggestionListener() {
                 @Override
                 public boolean onSuggestionSelect(int position) {

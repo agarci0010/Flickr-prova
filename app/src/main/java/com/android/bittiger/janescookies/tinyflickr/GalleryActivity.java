@@ -40,14 +40,12 @@ public class GalleryActivity extends AppCompatActivity {
     private void handleIntent(Intent intent) {
         Log.d(TAG, "----------handleIntent----------");
 
-        //Bundle b = this.getIntent().getExtras();
-        //String cerca_realitzada = b.getString("Imatge");
+
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 
             String query = intent.getStringExtra(SearchManager.QUERY);
 
-            //String query = cerca_realitzada;
             Log.d(TAG, "---handleIntent----testsearchview---Received a new search query: " + query);
 
             SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this,

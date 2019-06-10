@@ -8,16 +8,12 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by xicheng on 16/6/27.
- */
+
 public class FlickrFetchr {
 
     public static final String API_KEY = "b8cbad529685c20682f8c6d88ad200fd" ;
-    // must public
     public static final String PREF_SEARCH_QUERY = "searchQuery";
 
-    /*----------- private -------------------------*/
     private static final String TAG = FlickrFetchr.class.getSimpleName();
 
     private static final String ENDPOINT = "https://api.flickr.com/services/rest/" ;
@@ -30,7 +26,6 @@ public class FlickrFetchr {
 
     private static final String XML_PHOTO = "photo" ;
 
-    // Singleton, make sure only max. 1 instance exist, even for multi-thread
     private static volatile FlickrFetchr instance = null;
 
     public void FlickrFetcher() {
@@ -74,11 +69,9 @@ public class FlickrFetchr {
         URL url = new URL(urlSpec);
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        //URLConnection to HttpURLConnection
 
         try {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
-            // GET request ;  if for POST , use getOutputStream()
             InputStream in = connection.getInputStream();
 
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK ) {

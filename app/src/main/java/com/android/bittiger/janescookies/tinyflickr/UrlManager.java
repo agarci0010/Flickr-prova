@@ -2,27 +2,14 @@ package com.android.bittiger.janescookies.tinyflickr;
 
 import android.net.Uri;
 
-/**
- * Created by xicheng on 16/7/8.
- */
 public class UrlManager {
     private static final String TAG = UrlManager.class.getSimpleName();
 
-//    public static final String API_KEY = "178069b03af62f5735258c0a10a14d6e";
-//    public static final String PREF_SEARCH_QUERY ="searchQuery";
-
-//    private static final String ENDPOINT = "https://api.flickr.com/services/rest/";
-//    private static final String METHOD_GETRECENT = "flickr.photos.getRecent";
-//    private static final String METHOD_SEARCH = "flickr.photos.search";
 
 
 
     public static final String API_KEY = "b8cbad529685c20682f8c6d88ad200fd" ;
-    // must public
     public static final String PREF_SEARCH_QUERY = "searchQuery";
-
-    /*----------- private -------------------------*/
-//    private static final String TAG = FlickrFetchr.class.getSimpleName();
 
     private static final String ENDPOINT = "https://api.flickr.com/services/rest/" ;
     private static final String METHOD_GETRECENT = "flickr.photos.getRecent" ;
@@ -34,7 +21,6 @@ public class UrlManager {
 
     private static final String XML_PHOTO = "photo" ;
 
-    // Singleton, make sure only max. 1 instance exist, even for multi-thread
 
     private static volatile UrlManager instance = null;
     private UrlManager() {

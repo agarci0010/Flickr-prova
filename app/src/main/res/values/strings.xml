@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name"></string>
-    <string name="search">Search</string>
-    <string name="move">Move To Top</string>
-    <string name="clear">Clear</string>
-    <string name="clear_search">Clear Search</string>
-    <string name="move_to_top">Move To Top</string>
-    <string name="search_hint">Search Flickr</string>
-    <string name="download">Download</string>
-    <string name="open_in_app">Open in App</string>
+    <string name="search">Cercar</string>
+    <string name="move">Moure a sobre</string>
+    <string name="clear">Netejar</string>
+    <string name="clear_search">Netejar cerca</string>
+    <string name="move_to_top">Moure a sobre</string>
+    <string name="search_hint">Cercar Flickr</string>
+    <string name="download">Descarregar</string>
+    <string name="open_in_app">Obrir</string>
     <string name="settings_description"></string>
     <string name="txt_cerca">Cercar Imatges</string>
     <string name="btn_txtCerca">Cerca</string>
